@@ -41,4 +41,18 @@ public class Sql2oHeroDaoTest {
         Hero foundHero = heroDao.findById(hero.getId());
         assertEquals(hero,foundHero);
     }
+    
+    @Test
+    public void GetAlletrievesAllHeroes_2(){
+        Hero hero1 = new Hero("Hulk");
+        Hero hero2 = new Hero("superman");
+        heroDao.add(hero1);
+        heroDao.add(hero2);
+        assertEquals(2,heroDao.getAll());
+    }
+
+    @Test
+    public void NoHeroesAreFoundIfThereIsNone_0() {
+        assertEquals(0,heroDao.getAll());
+    }
 }
