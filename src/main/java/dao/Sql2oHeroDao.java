@@ -48,7 +48,7 @@ public class Sql2oHeroDao implements HeroDao {
         try(Connection con = sql2o.open()){
             //addParameter() takes key/value pair, key must match below(i think from the sql statement then the value is
             // findById argument id)
-            return con.createQuery("SELECT * FROM tasks WHERE id = :id").addParameter("id", id).executeAndFetchFirst(Hero.class); //fetch an individual item
+            return con.createQuery("SELECT * FROM heroes WHERE id = :id").addParameter("id", id).executeAndFetchFirst(Hero.class); //fetch an individual item
         }
     }
 }
