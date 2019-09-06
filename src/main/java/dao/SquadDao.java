@@ -10,10 +10,11 @@ public interface SquadDao {
         List<Squad> getAll();
 
         //CREATE
-        void add (Squad category);
+        void add (Squad squad);
 
         //READ
         Squad findById(int id);
+        List<Hero> getAllHeroesBySquad(int squadId);
 
         //UPDATE
         void update(int id, String name);
