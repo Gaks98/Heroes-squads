@@ -27,7 +27,18 @@ public class Sql2oHeroDaoTest {
     public void AddingHeroSuccessfullySetsHeroId() throws Exception {
         Hero hero = new Hero("Hulk");
         int originalId = hero.getId();
+    //if you get an error it'scoz add() method is from the interface and has not been implemented in the Sql2oDao class
+    // and also that's why we have to pass our objects through it so as to be found and saved
         heroDao.add(hero);
         assertNotEquals(originalId,hero.getId());
+    }
+
+    @Test
+    public void ExistingHeroesCanBeFoundById() throws Exception{
+        Hero hero = new Hero("Hulk");
+        heroDao.add(hero);
+        //coz findById() method is from the interface and has not been implemented yet that's why there is an error.
+        Hero foundHero = heroDao.findById(hero.getId());
+        assertEquals(hero,foundHero);
     }
 }
