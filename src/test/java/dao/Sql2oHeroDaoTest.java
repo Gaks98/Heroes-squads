@@ -11,6 +11,7 @@ public class Sql2oHeroDaoTest {
 
     @Before
     public void setup() throws Exception{
+        String connectionString ="jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         
     }
 
