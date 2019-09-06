@@ -23,4 +23,11 @@ public class Sql2oHeroDaoTest {
         conn.close();
     }
 
+    @Test
+    public void AddingHeroSuccessfullySetsHeroId() throws Exception {
+        Hero hero = new Hero("Hulk");
+        int originalId = hero.getId();
+        heroDao.add(hero);
+        assertNotEquals(originalId,hero.getId());
+    }
 }
