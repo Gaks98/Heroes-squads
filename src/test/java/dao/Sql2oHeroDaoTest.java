@@ -87,4 +87,13 @@ public class Sql2oHeroDaoTest {
         //daoSize is not deleted after the clearAllHeroes() because it's not part of it.
         assertTrue(daoSize > 0 && daoSize > heroDao.getAll().size());
     }
+
+    @Test
+    public void squadIdIsReturnedCorrectly() throws Exception {
+       Hero hero =  new Hero("Hulk",1);
+        int originalCatId = hero.getSquadId();
+       heroDao.add(hero);
+        assertEquals(originalCatId, heroDao.findById(hero.getId()).getSquadId());
+    }
+
 }
