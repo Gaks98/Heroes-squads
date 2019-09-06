@@ -6,10 +6,12 @@ public class Hero {
     private String description;
     private boolean assigned;
     private int id;
+    private int squadId;
 
-    public Hero(String description){
+    public Hero(String description,int squadId){
         this.description = description;
         this.assigned =false;
+        this.squadId = squadId;
     }
 
     @Override
@@ -19,12 +21,13 @@ public class Hero {
         Hero hero = (Hero) o;
         return assigned == hero.assigned &&
                 id == hero.id &&
+                squadId == hero.squadId &&
                 Objects.equals(description, hero.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(description, assigned, id);
+        return Objects.hash(description, assigned, id, squadId);
     }
 
     public String getDescription() {
@@ -52,4 +55,11 @@ public class Hero {
         return assigned;
     }
 
+    public void setSquadId(int squadId) {
+        this.squadId = squadId;
+    }
+
+    public int getSquadId() {
+        return squadId;
+    }
 }
