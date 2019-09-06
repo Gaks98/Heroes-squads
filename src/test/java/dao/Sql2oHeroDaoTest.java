@@ -9,5 +9,9 @@ public class Sql2oHeroDaoTest {
     private Sql2oHeroDao heroDao;
     private Connection conn;
 
+    @Before
+    public void setup() throws Exception{
+        
+    }
 
 }
