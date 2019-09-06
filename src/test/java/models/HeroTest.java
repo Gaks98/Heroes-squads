@@ -6,7 +6,11 @@ import static org.junit.Assert.*;
 
 public class HeroTest {
 
-    
+    @Test
+    public void NewHeroObjectGetsCorrectlyCreated_true(){
+        Hero hero = setupNewHero();
+        assertEquals("Hulk",hero.getDescription());
+    }
 
 
 
