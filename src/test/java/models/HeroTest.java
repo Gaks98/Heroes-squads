@@ -9,8 +9,11 @@ public class HeroTest {
     @Test
     public void NewHeroObjectGetsCorrectlyCreated_true(){
         Hero hero = setupNewHero();
-        assertEquals("Hulk",hero.getDescription());
+        assertEquals(true,hero instanceof Hero);
     }
+
+    @Test
+    public void
 
 
 
