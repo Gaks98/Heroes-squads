@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Hero {
     private String description;
     private boolean assigned;
@@ -8,6 +10,21 @@ public class Hero {
     public Hero(String description){
         this.description = description;
         this.assigned =false;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hero hero = (Hero) o;
+        return assigned == hero.assigned &&
+                id == hero.id &&
+                Objects.equals(description, hero.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(description, assigned, id);
     }
 
     public String getDescription() {
