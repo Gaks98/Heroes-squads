@@ -13,7 +13,10 @@ public class HeroTest {
     }
 
     @Test
-    public void
+    public void HeroInstantiatesCorrectly_true(){
+        Hero hero =setupNewHero();
+        assertEquals("Hulk",hero.getDescription());
+    }
 
 
 
