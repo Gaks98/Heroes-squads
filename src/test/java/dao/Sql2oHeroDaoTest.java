@@ -14,7 +14,8 @@ public class Sql2oHeroDaoTest {
   //JDBC TellS H2 to write the test database into memory, using the sql file we just created, which preps the database for us.
         String connectionString ="jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString,"","");
-
+        heroDao = new Sql2oHeroDao(sql2o);
+        conn = sql2o.open();
     }
 
 }
