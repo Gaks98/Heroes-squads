@@ -25,7 +25,7 @@ public class Sql2oHeroDaoTest {
 
     @Test
     public void AddingHeroSuccessfullySetsHeroId() throws Exception {
-        Hero hero = new Hero("Hulk");
+        Hero hero = new Hero("Hulk",1);
         int originalId = hero.getId();
     //if you get an error it'scoz add() method is from the interface and has not been implemented in the Sql2oDao class
     // and also that's why we have to pass our objects through it so as to be found and saved
@@ -35,7 +35,7 @@ public class Sql2oHeroDaoTest {
 
     @Test
     public void ExistingHeroesCanBeFoundById() throws Exception{
-        Hero hero = new Hero("Hulk");
+        Hero hero = new Hero("Hulk",1);
         heroDao.add(hero);
         //coz findById() method is from the interface and has not been implemented yet that's why there is an error.
         Hero foundHero = heroDao.findById(hero.getId());
@@ -44,8 +44,8 @@ public class Sql2oHeroDaoTest {
     
     @Test
     public void GetAllRetrievesAllHeroes_2() throws Exception{
-        Hero hero1 = new Hero("Hulk");
-        Hero hero2 = new Hero("superman");
+        Hero hero1 = new Hero("Hulk",1);
+        Hero hero2 = new Hero("superman",2);
         heroDao.add(hero1);
         heroDao.add(hero2);
         assertEquals(2,heroDao.getAll().size());
@@ -59,7 +59,7 @@ public class Sql2oHeroDaoTest {
     @Test
     public void update_changesHeroesDetail() throws Exception{
         String initialDescription = "Hulk";
-        Hero hero = new Hero(initialDescription);
+        Hero hero = new Hero(initialDescription,1);
         heroDao.add(hero);
         heroDao.update(hero.getId(),"wonder woman");
         Hero updatedHero = heroDao.findById(hero.getId());
@@ -68,7 +68,7 @@ public class Sql2oHeroDaoTest {
 
     @Test
     public void deleteById_deletesCorrectHero_0() throws Exception {
-        Hero hero = new Hero("Hulk");
+        Hero hero = new Hero("Hulk",1);
         heroDao.add(hero);
         heroDao.deleteById(hero.getId());
         assertEquals(0,heroDao.getAll().size());
@@ -76,8 +76,8 @@ public class Sql2oHeroDaoTest {
 
     @Test
     public void clearAll_clearsAll() {
-        Hero hero = new Hero("Hulk");
-        Hero otherHero = new Hero("wonder woman");
+        Hero hero = new Hero("Hulk",1);
+        Hero otherHero = new Hero("wonder woman",2);
         heroDao.add(hero);
         heroDao.add(otherHero);
         //will hold the number of heroes before they are all cleared

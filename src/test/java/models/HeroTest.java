@@ -27,6 +27,6 @@ public class HeroTest {
 
     //HELPER METHOD
     public Hero setupNewHero(){
-        return new Hero("Hulk");
+        return new Hero("Hulk",1);
     }
 }
