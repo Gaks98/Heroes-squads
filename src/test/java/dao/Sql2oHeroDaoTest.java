@@ -18,4 +18,9 @@ public class Sql2oHeroDaoTest {
         conn = sql2o.open();
     }
 
+    @After
+    public void tearDown() throws Exception{
+        conn.close();
+    }
+
 }
