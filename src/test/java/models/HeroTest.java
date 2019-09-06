@@ -18,7 +18,11 @@ public class HeroTest {
         assertEquals("Hulk",hero.getDescription());
     }
 
-
+    @Test
+    public void IsAssignedPropertyIsFalseAfterInstantiation(){
+        Hero hero = setupNewHero();
+        assertEquals(false,hero.isAssigned());
+    }
 
 
     //HELPER METHOD
