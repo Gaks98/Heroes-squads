@@ -14,10 +14,10 @@ public interface HeroDao {
     //READ
     Hero findById(int id);
 
-    // UPDATE
-    // void update(int id, String content);
+     //UPDATE
+     void update(int id, String content);
 
-    // DELETE
-    // void deleteById(int id);
-    // void clearAllTasks();
+     //DELETE
+     void deleteById(int id);
+     void clearAllTasks();
 }
