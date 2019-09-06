@@ -18,8 +18,16 @@ public class Hero {
         this.description = description;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setAssigned(boolean assigned) {
         this.assigned = assigned;
+    }
+
+    public int getId() {
+        return id;
     }
 
     //getter
