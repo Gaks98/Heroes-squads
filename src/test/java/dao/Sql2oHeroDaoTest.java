@@ -61,7 +61,7 @@ public class Sql2oHeroDaoTest {
         String initialDescription = "Hulk";
         Hero hero = new Hero(initialDescription,1);
         heroDao.add(hero);
-        heroDao.update(hero.getId(),"wonder woman");
+        heroDao.update(hero.getId(),"wonder woman",1);
         Hero updatedHero = heroDao.findById(hero.getId());
         assertNotEquals(initialDescription,updatedHero.getDescription());
     }
@@ -95,5 +95,16 @@ public class Sql2oHeroDaoTest {
        heroDao.add(hero);
         assertEquals(originalCatId, heroDao.findById(hero.getId()).getSquadId());
     }
+
+    @Test
+    public void updateChangesTaskContent() throws Exception {
+        String initialDescription = "mow the lawn";
+        Hero hero = new Hero (initialDescription, 1);// or use the helper method for easier refactoring
+        heroDao.add(hero);
+        heroDao.update(hero.getId(),"brush the cat", 1);
+        Hero updatedHero = heroDao.findById(hero.getId()); //why do I need to refind this?
+        assertNotEquals(initialDescription, updatedHero.getDescription());
+    }
+
 
 }
