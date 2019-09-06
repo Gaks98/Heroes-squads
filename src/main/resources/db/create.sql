@@ -1,7 +1,13 @@
 SET MODE PostgreSQL;
 
-CREATE TABLE IF NOT EXISTS tasks (
+CREATE TABLE IF NOT EXISTS heroes (
   id int PRIMARY KEY auto_increment,
   description VARCHAR,
-  completed BOOLEAN
+  assigned BOOLEAN,
+  squadid INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS squads (
+  id int PRIMARY KEY auto_increment,
+  name VARCHAR
 );
