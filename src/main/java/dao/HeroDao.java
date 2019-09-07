@@ -15,7 +15,7 @@ public interface HeroDao {
     Hero findById(int id);
 
      //UPDATE
-     void update(int id, String detail);
+     void update(int id, String detail,int categoryId);
 
      //DELETE
      void deleteById(int id);

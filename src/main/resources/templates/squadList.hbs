@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='styles/sqlist.css'>
+    <title>Squad List!</title>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img class="img" src="https://bit.ly/2HJaik3" class="card-img-top" alt="Assassin running">
+                <div class="card-body">
+                    <div class="card-text text-white" id="ptag">
+                        <h1>SQUAD LIST!</h1>
+
+
+                        {{#if nameOfSquad}}
+
+                        <h3>{{nameOfSquad}}</h3>
+
+                        <h4>{{squadMission}}</h4>
+                        <a href="/heroes" >View Heroes!</a>
+<!--                        &lt;!&ndash;added&ndash;&gt;   <a href="/squadteam" >View Squad Teams!</a>-->
+                        <hr>
+
+                        {{else}}
+                        <hr>
+                        <p>Add Squad First!! <a class="nav-link" href="/squad-form2">Create Squad</a></p>
+                        {{/if}}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</body>
+
+</html>

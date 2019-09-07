@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{#block "title"}}Hero Squad!{{/block}}</title>
+    <title>Hero Squad!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='styles/app.css'>
+    <link rel='stylesheet' href='styles/heroform.css'>
 
 
 </head>
@@ -45,10 +45,30 @@
         </nav>
     </header>
 
-    <div class = "template-display">
-        {{#block "content"}}
-        {{/block}}
+    <div class="loginBox" style="font-family:'Luckiest Guy', cursive">
+        <img src="https://bit.ly/2Wekzho" class="user">
+        <form id="contact" action='/heroes'>
+            <h3 id="green-text">Create Your Hero!</h3>
 
+            <label for="nameOfHero">
+
+                <input id="nameOfHero" name="nameOfHero" placeholder="Hero Name" type="text" tabindex="1" required autofocus>
+            </label>
+            <label for="squadType">
+                <input id="squadType" name="squadType" placeholder="Hero's Squad" type="text" tabindex="2" required>
+            </label>
+            <label for="heroStrength">
+                <input id="heroStrength" name="heroStrength" placeholder="Hero's Strength" type="text" tabindex="3" required>
+            </label>
+            <label for="heroWeakness">
+                <input id="heroWeakness" name="heroWeakness" placeholder="Hero's Weakness" type="text" tabindex="4" required>
+            </label>
+            <label for="heroAge">
+                <input id="heroAge" name="heroAge" placeholder="Hero's Age" type="text" tabindex="5" required>
+            </label>
+
+            <button name="submit" type="submit" id="submit">Create Hero!</button>
+        </form>
     </div>
 
 </div>

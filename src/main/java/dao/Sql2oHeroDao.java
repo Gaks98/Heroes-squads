@@ -16,7 +16,7 @@ public class Sql2oHeroDao implements HeroDao {
 
     @Override
     public void add(Hero hero){
-        String sql = "INSERT INTO heroes (description) VALUES (:description)";
+        String sql = "INSERT INTO heroes (description, squadId) VALUES (:description, :squadId)";
 
         try (Connection con = sql2o.open()){
     //createQuery() is used to create dynamic queries, which are queries defined directly within an application’s business logic:
@@ -34,6 +34,7 @@ public class Sql2oHeroDao implements HeroDao {
             System.out.println(ex); //oops we have an error!
         }
     }
+
 
     @Override
     public List<Hero> getAll(){
@@ -53,10 +54,12 @@ public class Sql2oHeroDao implements HeroDao {
     }
 
     @Override
-    public void update(int id, String newDescription){
-        String sql = "UPDATE heroes SET description = :description WHERE id=:id";
+    public void update(int id, String newDescription, int newSquadId){
+        String sql = "UPDATE heroes SET (description, squadId) = (:description, :squadId) WHERE id=:id";
         try (Connection con = sql2o.open()){
-            con.createQuery(sql).addParameter("description",newDescription).addParameter("id",id).executeUpdate();
+            con.createQuery(sql).addParameter("description",newDescription)
+                    .addParameter("squadId", newSquadId)
+                    .addParameter("id",id).executeUpdate();
         }catch (Sql2oException ex){
             System.out.println(ex);
         }

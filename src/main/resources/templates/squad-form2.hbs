@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{#block "title"}}Hero Squad!{{/block}}</title>
+    <title>Squad Form!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
-    <link rel='stylesheet' href='styles/app.css'>
+    <link rel='stylesheet' href='styles/squadform.css'>
 
 
 </head>
@@ -45,10 +45,26 @@
         </nav>
     </header>
 
-    <div class = "template-display">
-        {{#block "content"}}
-        {{/block}}
+    <div class="loginBox" style="font-family:'Luckiest Guy', cursive">
+        <img src="https://bit.ly/2Wekzho" class="user">
+        <form id="contact" action='/squadList'>
+            <h3 id = "green-text">Create A Hero Squad!</h3>
 
+            <label for = "nameOfSquad">
+
+                <input id="nameOfSquad" name="nameOfSquad" placeholder="Squad Name" type="text" tabindex="1" required autofocus>
+            </label>
+            <label for = "squadMission">
+
+                <input id="squadMission" name="squadMission" placeholder="Squad Cause" type="text" tabindex="2" required>
+            </label>
+            <label for = "squadSize">
+                <input id="squadSize" name="squadSize" placeholder="Number of Members" type="text" tabindex="3" required>
+            </label>
+            <label for = "">
+                <button name="submit" type="submit" id="submit">Create Squad!</button>
+            </label>
+        </form>
     </div>
 
 </div>
