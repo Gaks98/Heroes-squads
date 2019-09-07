@@ -1,0 +1,20 @@
+{{#partial "content"}}
+
+    <p>Description: {{ hero.description }}</p>
+    <p>Squad of this hero: {{ squad.name }}</p>
+    <h5>
+        Hero status:
+        {{#if hero.assigned }}
+            Assigned
+        {{else}}
+             Not assigned
+        {{/if}}
+    </h5>
+    <p>
+        <a href="/heroes/{{hero.id}}/edit">Edit this hero</a><br>
+        <a href="/squads/{{hero.squadId}}/heroes/{{hero.id}}/delete">DELETE this hero</a>
+    </p>
+
+{{/partial}}
+
+{{> layout.hbs}}
