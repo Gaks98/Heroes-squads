@@ -2,9 +2,10 @@ plugins {
     id 'java'
 }
 
+
+
 group 'com.gakii.heroes-squad'
 version '1.0-SNAPSHOT'
-
 sourceCompatibility = 1.8
 
 repositories {
@@ -21,6 +22,5 @@ dependencies {
     compile group: 'com.h2database', name: 'h2', version: '1.4.191'
 }
 
-applicationName = "heroes-squad"
-//mainClassName = 'App'
-task stage(dependsOn: ['clean', 'installDist'])
+defaultTasks = ['clean']
+task stage(dependsOn: ['clean', 'installApp'])
