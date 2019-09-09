@@ -32,8 +32,8 @@ public class App {
 
         staticFileLocation("/public");
 
-        String connectionString = "jdbc:postgresql://ec2-23-21-76-49.compute-1.amazonaws.com:5432/df2ubtmuhc32s7"; //!
-        Sql2o sql2o = new Sql2o(connectionString, "stdhhdzdeynsis", "43a1b82999c0f772dbbd8f7602f0fa50c75b0c3e0f7b0c2caa36637a9569de10"); //!
+        String connectionString = "jdbc:h2:~/heroes-squad.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        Sql2o sql2o = new Sql2o(connectionString, "", "");
         Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
         Sql2oSquadDao squadDao = new Sql2oSquadDao(sql2o);
 

@@ -1,12 +1,15 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
-
+archivesBaseName = "heroes-squad"
+applicationName = "heroes-squad"
 
 group 'com.gakii.heroes-squad'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
+mainClassName = "App"
 
 repositories {
     mavenCentral()
