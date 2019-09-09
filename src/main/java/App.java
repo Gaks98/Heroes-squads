@@ -209,7 +209,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String nameOfSquad = request.queryParams("nameOfSquad");
             String squadMission = request.queryParams("squadMission");
-            String squadSize = request.queryParams("squadSize");
+            int squadSize = Integer.parseInt(request.queryParams("squadSize"));
             model.put("nameOfSquad", nameOfSquad);
             model.put("squadMission", squadMission);
             model.put("squadSize", squadSize);
