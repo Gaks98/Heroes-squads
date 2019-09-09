@@ -42,10 +42,10 @@ public class App {
         //get: show all heroes in all squads and show all squads
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-//            List<Squad> allSquads = squadDao.getAll();
-//            model.put("squads", allSquads);
-//            List<Hero> heroes = heroDao.getAll();
-//            model.put("heroes", heroes);
+            List<Squad> allSquads = squadDao.getAll();
+            model.put("squads", allSquads);
+            List<Hero> heroes = heroDao.getAll();
+            model.put("heroes", heroes);
             return new ModelAndView(model, "index2.hbs");
         }, new HandlebarsTemplateEngine());
 
